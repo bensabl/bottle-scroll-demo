@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: white;
+  color: grey;
+  font-family: Arial, sans-serif;
+}
+
+.intro,
+.outro {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animation-section {
+  height: 300vh;
+  position: relative;
+}
+
+canvas {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+}
