@@ -16,22 +16,19 @@ let loadedImages = 0;
 
 for (let i = 0; i < frameCount; i++) {
   const img = new Image();
-  img.src = currentFrame(i);
 
-img.onload = () => {
-  loadedImages++;
-
-  // Afficher uniquement lorsque la toute première frame est chargée
-  if (i === 0) {
-    resizeCanvas();
-    render(0);
-  }
-};
-
-  img.onerror = () => {
-    console.warn("Frame missing:", img.src);
+  img.onload = () => {
+    if (i === 0) {
+      resizeCanvas();
+      render(0);
+    }
   };
 
+  img.onerror = () => {
+    console.error("Image introuvable :", currentFrame(i));
+  };
+
+  img.src = currentFrame(i);
   images.push(img);
 }
 
