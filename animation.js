@@ -18,14 +18,15 @@ for (let i = 0; i < frameCount; i++) {
   const img = new Image();
   img.src = currentFrame(i);
 
-  img.onload = () => {
-    loadedImages++;
+img.onload = () => {
+  loadedImages++;
 
-    if (loadedImages === 1) {
-      resizeCanvas();
-      render(0);
-    }
-  };
+  // Afficher uniquement lorsque la toute première frame est chargée
+  if (i === 0) {
+    resizeCanvas();
+    render(0);
+  }
+};
 
   img.onerror = () => {
     console.warn("Frame missing:", img.src);
