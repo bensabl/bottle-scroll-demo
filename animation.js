@@ -8,7 +8,7 @@ const frameCount = lastFrame - firstFrame + 1;
 
 const currentFrame = (index) => {
   const frameNumber = firstFrame + index;
-  return `frames/Bottle-${String(frameNumber).padStart(5, "0")}.png`;
+  return `frames/Bottle-${String(frameNumber).padStart(5, "0")}.jpeg`;
 };
 
 const images = [];
